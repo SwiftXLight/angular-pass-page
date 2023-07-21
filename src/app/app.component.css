@@ -1,0 +1,28 @@
+.strength-section {
+    margin-top: 10px;
+    display: flex;
+  }
+  
+  .strength-dot {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    border-radius: 50%;
+  }
+  
+  .gray {
+    background-color: gray;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .yellow {
+    background-color: yellow;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
