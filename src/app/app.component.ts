@@ -9,6 +9,7 @@ export class AppComponent {
   password: string = '';
   passwordStrength: 'empty-pass' | 'short' | 'weak' | 'medium' | 'strong' = 'empty-pass';
   minPasswordLength: number = 8;
+  showPassword: boolean = false;
 
   checkPasswordStrength(): void {
     const hasLetters = this.password.match(/[a-zA-Z]/) !== null;
@@ -26,5 +27,9 @@ export class AppComponent {
     } else {
       this.passwordStrength = 'weak';
     }
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 }

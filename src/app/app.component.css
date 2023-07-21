@@ -1,28 +1,93 @@
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div > *:not(.strength-dot) {
+  width: 300px;
+}
+
+.password-label {
+  text-align: center;
+}
+
+input[type="password"],
+input[type="text"],
+button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:focus {
+  outline: none;
+}
+
 .strength-section {
-    margin-top: 10px;
-    display: flex;
-  }
-  
-  .strength-dot {
-    width: 15px;
-    height: 15px;
-    margin-right: 5px;
-    border-radius: 50%;
-  }
-  
-  .gray {
-    background-color: gray;
-  }
-  
-  .red {
-    background-color: red;
-  }
-  
-  .yellow {
-    background-color: yellow;
-  }
-  
-  .green {
-    background-color: green;
-  }
-  
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.strength-dot {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+  animation: pulsate 1s ease-in-out infinite;
+}
+
+.password-requirements {
+  display: none;
+  margin-top: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.password-requirements.visible {
+  display: block;
+}
+
+.short,
+.weak,
+.medium {
+  color: red;
+}
+
+.strong {
+  color: green;
+}

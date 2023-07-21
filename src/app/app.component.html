@@ -1,12 +1,34 @@
 <div>
-  <label for="password">Enter Password:</label>
+  <label class="password-label" for="password">Enter Password:</label>
   <input
-    type="password"
+    type="{{ showPassword ? 'text' : 'password' }}"
     id="password"
     [(ngModel)]="password"
     (input)="checkPasswordStrength()"
     placeholder="Password"
   />
+  <button (click)="togglePasswordVisibility()">{{ showPassword ? 'Hide' : 'Show' }} Password</button>
+</div>
+
+<div class="password-requirements" [ngClass]="{
+  'visible': password.length > 0,
+  'short': password.length < minPasswordLength,
+  'weak': passwordStrength === 'weak',
+  'medium': passwordStrength === 'medium',
+  'strong': passwordStrength === 'strong'
+}">
+  <ng-container *ngIf="password.length < minPasswordLength">
+    Password must have at least {{ minPasswordLength }} characters.
+  </ng-container>
+  <ng-container *ngIf="passwordStrength === 'weak'">
+    Password must include at least one letter, one digit, and one symbol.
+  </ng-container>
+  <ng-container *ngIf="passwordStrength === 'medium'">
+    Password should have a combination of letters, digits, and symbols.
+  </ng-container>
+  <ng-container *ngIf="passwordStrength === 'strong'">
+    Password is strong! Well done!
+  </ng-container>
 </div>
 
 <div class="strength-section">
