@@ -10,7 +10,27 @@
 </div>
 
 <div class="strength-section">
-  <div class="strength-dot" [ngClass]="{'green': passwordStrength === 'strong', 'red': passwordStrength === 'short' || passwordStrength === 'weak', 'yellow': passwordStrength === 'medium', 'gray': passwordStrength === 'empty-pass'}"></div>
-  <div class="strength-dot" [ngClass]="{'green': passwordStrength === 'strong', 'red': passwordStrength === 'short', 'yellow': passwordStrength === 'medium', 'gray': passwordStrength === 'empty-pass' || passwordStrength === 'weak'}"></div>
-  <div class="strength-dot" [ngClass]="{'green': passwordStrength === 'strong', 'red': passwordStrength === 'short', 'gray': passwordStrength === 'empty-pass' || passwordStrength === 'weak' || passwordStrength === 'medium'}"></div>
+  <div class="strength-dot" 
+    [ngClass]="{
+      'green': passwordStrength === 'strong',
+      'red': passwordStrength === 'short' || passwordStrength === 'weak',
+      'yellow': passwordStrength === 'medium', 
+      'gray': passwordStrength === 'empty-pass'
+    }">
+  </div>
+  <div class="strength-dot" 
+    [ngClass]="{
+      'green': passwordStrength === 'strong',
+      'red': passwordStrength === 'short',
+      'yellow': passwordStrength === 'medium',
+      'gray': passwordStrength === 'empty-pass' || passwordStrength === 'weak'
+    }">
+  </div>
+  <div class="strength-dot" 
+    [ngClass]="{
+      'green': passwordStrength === 'strong',
+      'red': passwordStrength === 'short',
+      'gray': passwordStrength === 'empty-pass' || passwordStrength === 'weak' || passwordStrength === 'medium'
+    }">
+  </div>
 </div>
